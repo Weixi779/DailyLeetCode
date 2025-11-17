@@ -4,10 +4,19 @@ import Foundation
 @MainActor
 @main
 struct DailyLeetCodeRunner {
-    static func main() {
+    static func main() async {
         TaskCatalog.bootstrap().forEach { TaskRegistry.shared.register($0) }
 
-        let args = CommandLine.arguments.dropFirst()
+        let args = Array(CommandLine.arguments.dropFirst())
+        if let fetchArg = args.first(where: { $0.hasPrefix("--fetch-url=") }) {
+            let value = fetchArg.replacingOccurrences(of: "--fetch-url=", with: "")
+            await fetchMetadata(for: value)
+            return
+        } else if let fetchIndex = args.firstIndex(of: "--fetch"), fetchIndex + 1 < args.count {
+            await fetchMetadata(for: args[fetchIndex + 1])
+            return
+        }
+
         if let categoryArg = args.first(where: { $0.hasPrefix("--category=") }) {
             let value = categoryArg.replacingOccurrences(of: "--category=", with: "")
             run(categoryFilter: value)
@@ -19,8 +28,9 @@ struct DailyLeetCodeRunner {
     }
 
     private static func runAll() {
-        print("Running all registered tasks (\(TaskRegistry.shared.allTasks().count))\n")
-        TaskRegistry.shared.allTasks().forEach(runTask)
+        let tasks = TaskRegistry.shared.allTasks()
+        print("Running all registered tasks (\(tasks.count))\n")
+        tasks.forEach(runTask)
     }
 
     private static func run(idFilter: String) {
@@ -55,5 +65,32 @@ struct DailyLeetCodeRunner {
         print(task.describe())
         task.run()
         print("---\n")
+    }
+
+    private static func fetchMetadata(for urlString: String) async {
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL: \(urlString)")
+            return
+        }
+        do {
+            let client = try ProblemMetadataFetcher.makeClient()
+            let details = try await client.fetchProblem(from: url)
+            print("Fetched metadata:")
+            print("ID: \(details.id)")
+            print("Slug: \(details.slug)")
+            print("Title: \(details.title)")
+            if let translated = details.translatedTitle {
+                print("Title (CN): \(translated)")
+            }
+            print("URL: https://leetcode.cn/problems/\(details.slug)/")
+            if !details.exampleTestCases.isEmpty {
+                print("Example Testcases:")
+                for (index, example) in details.exampleTestCases.enumerated() {
+                    print("[\(index + 1)] \(example)")
+                }
+            }
+        } catch {
+            print("Failed to fetch metadata: \(error)")
+        }
     }
 }

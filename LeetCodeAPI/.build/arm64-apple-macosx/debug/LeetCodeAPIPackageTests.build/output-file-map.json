@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/master.swiftdeps"
+  },
+  "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.d",
+    "object": "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.dia"
+  }
+}

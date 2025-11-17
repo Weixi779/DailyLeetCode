@@ -1,0 +1,638 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.xctest/Contents/MacOS/LeetCodeAPIPackageTests",
+      "packagePath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI",
+      "productName" : "LeetCodeAPIPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.LeetCodeAPI-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/sources",
+      "importPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Sources/LeetCodeAPI/LeetCodeAPI.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "LeetCodeAPI",
+      "moduleOutputPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPI.swiftmodule",
+      "objects" : [
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/LeetCodeAPI.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/include/LeetCodeAPI-Swift.h",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "leetcodeapi"
+      ],
+      "outputFileMapPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/LeetCodeAPI.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPI.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Sources/LeetCodeAPI/LeetCodeAPI.swift"
+      ],
+      "tempsPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.LeetCodeAPIPackageTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/sources",
+      "importPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPITests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "LeetCodeAPIPackageTests",
+      "moduleOutputPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPIPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/include/LeetCodeAPIPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "leetcodeapi"
+      ],
+      "outputFileMapPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPIPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.LeetCodeAPITests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/sources",
+      "importPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Tests/LeetCodeAPITests/LeetCodeAPITests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPI.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "LeetCodeAPITests",
+      "moduleOutputPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPITests.swiftmodule",
+      "objects" : [
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/LeetCodeAPITests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "leetcodeapi"
+      ],
+      "outputFileMapPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/LeetCodeAPITests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules/LeetCodeAPITests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Tests/LeetCodeAPITests/LeetCodeAPITests.swift"
+      ],
+      "tempsPath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "LeetCodeAPI" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LeetCodeAPI",
+      "-package-name",
+      "leetcodeapi",
+      "-c",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Sources/LeetCodeAPI/LeetCodeAPI.swift",
+      "-I",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/include/LeetCodeAPI-Swift.h",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "leetcodeapi",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "LeetCodeAPIPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LeetCodeAPIPackageTests",
+      "-package-name",
+      "leetcodeapi",
+      "-c",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/include/LeetCodeAPIPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "leetcodeapi",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "LeetCodeAPITests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LeetCodeAPITests",
+      "-package-name",
+      "leetcodeapi",
+      "-c",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Tests/LeetCodeAPITests/LeetCodeAPITests.swift",
+      "-I",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "leetcodeapi",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "LeetCodeAPI" : [
+
+    ],
+    "LeetCodeAPIPackageTests" : [
+      "LeetCodeAPITests",
+      "LeetCodeAPI"
+    ],
+    "LeetCodeAPITests" : [
+      "LeetCodeAPI"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Sources/LeetCodeAPI/LeetCodeAPI.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/sources"
+    },
+    "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/sources"
+    },
+    "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPI.build/LeetCodeAPI.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/LeetCodeAPITests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPIPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/Tests/LeetCodeAPITests/LeetCodeAPITests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/LeetCodeAPITests.build/sources"
+    },
+    "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/sunshiwei/Develop/Leetcode-Weixi/LeetCodeAPI/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

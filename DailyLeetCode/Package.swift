@@ -18,9 +18,15 @@ let package = Package(
             targets: ["DailyLeetCodeRunner"]
         )
     ],
+    dependencies: [
+        .package(path: "../LeetCodeAPI")
+    ],
     targets: [
         .target(
-            name: "DailyLeetCodeCore"
+            name: "DailyLeetCodeCore",
+            dependencies: [
+                "LeetCodeAPI"
+            ]
         ),
         .executableTarget(
             name: "DailyLeetCodeRunner",
