@@ -13,3 +13,7 @@ xcuserdata/
 
 # Podfiles
 Pods/
+
+# Swift Package Manager
+.build/
+.swiftpm/

@@ -1,3 +1,4 @@
+import Demark
 import Foundation
 
 public struct ProblemDetails: Sendable {
@@ -7,6 +8,7 @@ public struct ProblemDetails: Sendable {
     public let translatedTitle: String?
     public let content: String?
     public let translatedContent: String?
+    public let difficulty: String?
     public let exampleTestCases: [String]
 
     public init(
@@ -16,6 +18,7 @@ public struct ProblemDetails: Sendable {
         translatedTitle: String?,
         content: String?,
         translatedContent: String?,
+        difficulty: String?,
         exampleTestCases: [String]
     ) {
         self.id = id
@@ -24,7 +27,44 @@ public struct ProblemDetails: Sendable {
         self.translatedTitle = translatedTitle
         self.content = content
         self.translatedContent = translatedContent
+        self.difficulty = difficulty
         self.exampleTestCases = exampleTestCases
+    }
+
+    public func markdownSummary(using converter: HtmlToMarkdownConverter = HtmlToMarkdownConverter()) async -> String {
+        var sections = [String]()
+        var heading = "# LeetCode \(id). \(title)"
+        if let translatedTitle, !translatedTitle.isEmpty {
+            heading += "\n## \(translatedTitle)"
+        }
+        sections.append(heading)
+
+        var metadata = [String]()
+        if let difficulty, !difficulty.isEmpty {
+            metadata.append("- Difficulty: \(difficulty)")
+        }
+        metadata.append("- Link: https://leetcode.cn/problems/\(slug)/")
+        sections.append(metadata.joined(separator: "\n"))
+
+        let cnMarkdown = await markdown(from: translatedContent, using: converter)
+        let enMarkdown = await markdown(from: content, using: converter)
+
+        if let cnMarkdown {
+            sections.append("## 描述\n\(cnMarkdown)")
+        }
+
+        let shouldIncludeEnglish = content != nil && (translatedContent == nil || translatedContent != content)
+        if let enMarkdown, shouldIncludeEnglish || cnMarkdown == nil {
+            let heading = cnMarkdown == nil ? "## Description" : "## Description (EN)"
+            sections.append("\(heading)\n\(enMarkdown)")
+        }
+
+        return sections.joined(separator: "\n\n")
+    }
+
+    private func markdown(from html: String?, using converter: HtmlToMarkdownConverter) async -> String? {
+        guard let html, !html.isEmpty else { return nil }
+        return try? await converter.convert(html: html)
     }
 }
 
@@ -62,7 +102,6 @@ public struct LeetCodeClientConfiguration: Sendable {
     }
 }
 
-@available(macOS 12.0, iOS 15.0, *)
 public actor LeetCodeClient {
     public let configuration: LeetCodeClientConfiguration
     private let urlSession: URLSession
@@ -110,6 +149,7 @@ public actor LeetCodeClient {
             translatedTitle: question.translatedTitle,
             content: question.content,
             translatedContent: question.translatedContent,
+            difficulty: question.difficulty,
             exampleTestCases: examples
         )
     }
@@ -174,6 +214,7 @@ private enum GraphQLPayload {
     query questionData($titleSlug: String!) {
       question(titleSlug: $titleSlug) {
         questionId
+        difficulty
         title
         translatedTitle
         titleSlug
@@ -195,6 +236,7 @@ private struct GraphQLResponse: Decodable {
 
     struct Question: Decodable {
         let questionId: String
+        let difficulty: String?
         let title: String
         let translatedTitle: String?
         let titleSlug: String

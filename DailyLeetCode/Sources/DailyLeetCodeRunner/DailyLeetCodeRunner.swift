@@ -1,4 +1,5 @@
 import DailyLeetCodeCore
+import LeetCodeAPI
 import Foundation
 
 @MainActor
@@ -75,20 +76,10 @@ struct DailyLeetCodeRunner {
         do {
             let client = try ProblemMetadataFetcher.makeClient()
             let details = try await client.fetchProblem(from: url)
-            print("Fetched metadata:")
-            print("ID: \(details.id)")
-            print("Slug: \(details.slug)")
-            print("Title: \(details.title)")
-            if let translated = details.translatedTitle {
-                print("Title (CN): \(translated)")
-            }
-            print("URL: https://leetcode.cn/problems/\(details.slug)/")
-            if !details.exampleTestCases.isEmpty {
-                print("Example Testcases:")
-                for (index, example) in details.exampleTestCases.enumerated() {
-                    print("[\(index + 1)] \(example)")
-                }
-            }
+//            dump(details)
+            let converter = HtmlToMarkdownConverter()
+            let markdown = await details.markdownSummary(using: converter)
+            print(markdown)
         } catch {
             print("Failed to fetch metadata: \(error)")
         }

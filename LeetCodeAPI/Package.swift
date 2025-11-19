@@ -5,18 +5,24 @@ import PackageDescription
 
 let package = Package(
     name: "LeetCodeAPI",
+    platforms: [
+        .macOS(.v14)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "LeetCodeAPI",
             targets: ["LeetCodeAPI"]
         ),
     ],
+    dependencies: [
+        .package(path: "../DailyLeetCode/Demark-main")
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "LeetCodeAPI"
+            name: "LeetCodeAPI",
+            dependencies: [
+                .product(name: "Demark", package: "Demark-main")
+            ]
         ),
         .testTarget(
             name: "LeetCodeAPITests",

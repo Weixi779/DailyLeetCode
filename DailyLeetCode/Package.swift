@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "DailyLeetCode",
     platforms: [
-        .macOS(.v13)
+        .macOS(.v14)
     ],
     products: [
         .library(
@@ -30,7 +30,7 @@ let package = Package(
         ),
         .executableTarget(
             name: "DailyLeetCodeRunner",
-            dependencies: ["DailyLeetCodeCore"]
+            dependencies: ["DailyLeetCodeCore", "LeetCodeAPI"]
         ),
         .testTarget(
             name: "DailyLeetCodeCoreTests",
