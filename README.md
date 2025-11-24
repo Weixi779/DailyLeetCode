@@ -38,6 +38,11 @@ swift run DailyLeetCodeRunner --fetch-url=https://leetcode.cn/problems/two-sum/
 
 The runner prints the problem ID, localized difficulty, link, and Chinese description so you can paste it directly into Swift doc comments.
 
+## Running in Xcode (`⌘R`)
+- Open `DailyLeetCode.xcworkspace`, pick the `DailyLeetCodeRunner` scheme (or create a scratch Command Line Tool that imports `DailyLeetCodeCore`).
+- Implement `run()` inside each problem struct however you like (the protocol provides an empty default), e.g. calling the solution with sample inputs.
+- Hit `⌘R` to execute the active runner and inspect console output without leaving Xcode.
+
 ## Problem Generator
 Automate scaffold creation with:
 

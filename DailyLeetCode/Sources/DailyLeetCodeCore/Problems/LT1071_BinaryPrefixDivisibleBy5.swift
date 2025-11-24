@@ -44,4 +44,22 @@ public struct LT1071BinaryPrefixDivisibleBy5: LeetCodeTask {
     public let tags: [ProblemTag] = []
 
     public init() {}
+    
+    public func run() {
+        print(prefixesDivBy5([0,1,1]))
+        print(prefixesDivBy5([1,1,1]))
+        print(prefixesDivBy5([1,0,1,1,1,1,0,0,0,0,1,0,0,0,0,0,1,0,0,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,1,1,1,1,0,1,1,0,1,0,0,0,0,0,0,1,0,1,1,1,0,0,1,0]))
+    }
+    
+    func prefixesDivBy5(_ nums: [Int]) -> [Bool] {
+        var result: [Bool] = [Bool](repeating: false, count: nums.count)
+        
+        var current: Int = 0
+        for (index, number) in nums.enumerated() {
+            current = (current << 1 | number) % 5
+            result[index] = (current == 0)
+        }
+        
+        return result
+    }
 }

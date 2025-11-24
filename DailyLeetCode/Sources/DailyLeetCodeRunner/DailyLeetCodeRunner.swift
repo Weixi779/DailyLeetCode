@@ -36,7 +36,7 @@ struct DailyLeetCodeRunner {
 
     private static func runAll() {
         let tasks = TaskRegistry.shared.allTasks()
-        print("Running all registered tasks (\(tasks.count))\n")
+        guard !tasks.isEmpty else { return }
         tasks.forEach(runTask)
     }
 
@@ -44,11 +44,8 @@ struct DailyLeetCodeRunner {
         let matches = TaskRegistry.shared
             .allTasks()
             .filter { $0.id.lowercased() == idFilter.lowercased() }
-        if matches.isEmpty {
-            print("No task found for id \(idFilter)")
-        } else {
-            matches.forEach(runTask)
-        }
+        guard !matches.isEmpty else { return }
+        matches.forEach(runTask)
     }
 
     private static func run(tagFilter: String) {
@@ -58,11 +55,8 @@ struct DailyLeetCodeRunner {
             .filter { task in
                 task.tags.contains { $0.rawValue.lowercased() == lower }
             }
-        if matches.isEmpty {
-            print("No task found for tag filter \(tagFilter)")
-        } else {
-            matches.forEach(runTask)
-        }
+        guard !matches.isEmpty else { return }
+        matches.forEach(runTask)
     }
 
     private static func runTask(_ task: any LeetCodeTask) {
