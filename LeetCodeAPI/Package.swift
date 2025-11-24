@@ -15,13 +15,13 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../DailyLeetCode/Demark-main")
+        .package(url: "https://github.com/steipete/DeMark.git", branch: "main")
     ],
     targets: [
         .target(
             name: "LeetCodeAPI",
             dependencies: [
-                .product(name: "Demark", package: "Demark-main")
+                .product(name: "Demark", package: "DeMark")
             ]
         ),
         .testTarget(
