@@ -40,31 +40,43 @@ public struct ProblemDetails: Sendable {
         sections.append(heading)
 
         var metadata = [String]()
-        if let difficulty, !difficulty.isEmpty {
-            metadata.append("- Difficulty: \(difficulty)")
+        if let difficultyText = localizedDifficulty() {
+            metadata.append("- 难度: \(difficultyText)")
         }
-        metadata.append("- Link: https://leetcode.cn/problems/\(slug)/")
+        metadata.append("- 链接: https://leetcode.cn/problems/\(slug)/")
         sections.append(metadata.joined(separator: "\n"))
 
-        let cnMarkdown = await markdown(from: translatedContent, using: converter)
-        let enMarkdown = await markdown(from: content, using: converter)
-
-        if let cnMarkdown {
-            sections.append("## 描述\n\(cnMarkdown)")
-        }
-
-        let shouldIncludeEnglish = content != nil && (translatedContent == nil || translatedContent != content)
-        if let enMarkdown, shouldIncludeEnglish || cnMarkdown == nil {
-            let heading = cnMarkdown == nil ? "## Description" : "## Description (EN)"
-            sections.append("\(heading)\n\(enMarkdown)")
+        if let markdown = await preferredMarkdown(using: converter) {
+            sections.append("## 描述\n\(markdown)")
         }
 
         return sections.joined(separator: "\n\n")
     }
 
-    private func markdown(from html: String?, using converter: HtmlToMarkdownConverter) async -> String? {
-        guard let html, !html.isEmpty else { return nil }
-        return try? await converter.convert(html: html)
+    private func preferredMarkdown(using converter: HtmlToMarkdownConverter) async -> String? {
+        let preferredHTML = translatedContent ?? content
+        if let preferredHTML, !preferredHTML.isEmpty,
+           let markdown = try? await converter.convert(html: preferredHTML) {
+            return markdown
+        }
+        if let fallback = content, !fallback.isEmpty {
+            return try? await converter.convert(html: fallback)
+        }
+        return nil
+    }
+
+    private func localizedDifficulty() -> String? {
+        guard let difficulty else { return nil }
+        switch difficulty.lowercased() {
+        case "easy":
+            return "简单"
+        case "medium":
+            return "中等"
+        case "hard":
+            return "困难"
+        default:
+            return difficulty
+        }
     }
 }
 

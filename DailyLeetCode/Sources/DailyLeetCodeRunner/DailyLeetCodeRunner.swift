@@ -18,10 +18,16 @@ struct DailyLeetCodeRunner {
             return
         }
 
-        if let categoryArg = args.first(where: { $0.hasPrefix("--category=") }) {
-            let value = categoryArg.replacingOccurrences(of: "--category=", with: "")
-            run(categoryFilter: value)
-        } else if let id = args.first {
+        if let tagArg = args.first(where: { $0.hasPrefix("--tag=") }) {
+            let value = tagArg.replacingOccurrences(of: "--tag=", with: "")
+            run(tagFilter: value)
+            return
+        } else if let tagIndex = args.firstIndex(of: "--tag"), tagIndex + 1 < args.count {
+            run(tagFilter: args[tagIndex + 1])
+            return
+        }
+
+        if let id = args.first, !id.hasPrefix("--") {
             run(idFilter: id)
         } else {
             runAll()
@@ -45,18 +51,15 @@ struct DailyLeetCodeRunner {
         }
     }
 
-    private static func run(categoryFilter: String) {
-        let lower = categoryFilter.lowercased()
-        let matches = TaskRegistry.shared.allTasks().filter { task in
-            switch task.category {
-            case .daily:
-                return lower == "daily"
-            case .topic(let name):
-                return lower == "topic" || lower == name.lowercased()
+    private static func run(tagFilter: String) {
+        let lower = tagFilter.lowercased()
+        let matches = TaskRegistry.shared
+            .allTasks()
+            .filter { task in
+                task.tags.contains { $0.rawValue.lowercased() == lower }
             }
-        }
         if matches.isEmpty {
-            print("No task found for category filter \(categoryFilter)")
+            print("No task found for tag filter \(tagFilter)")
         } else {
             matches.forEach(runTask)
         }

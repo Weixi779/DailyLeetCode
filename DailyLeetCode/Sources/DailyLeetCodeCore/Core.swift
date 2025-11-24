@@ -1,38 +1,35 @@
 import Foundation
 
-public enum ProblemCategory: Equatable {
-    case daily(date: DateComponents)
-    case topic(name: String)
+public struct ProblemTag: Hashable, ExpressibleByStringLiteral, CustomStringConvertible {
+    public let rawValue: String
+
+    public init(_ rawValue: String) {
+        self.rawValue = rawValue
+    }
+
+    public init(stringLiteral value: StringLiteralType) {
+        self.rawValue = value
+    }
+
+    public var description: String { rawValue }
 }
 
 public protocol LeetCodeTask {
     var id: String { get }
     var title: String { get }
     var url: URL { get }
-    var category: ProblemCategory { get }
+    var tags: [ProblemTag] { get }
     func run()
 }
 
 public extension LeetCodeTask {
     func describe() -> String {
-        "[#\(id)] \(title) -> \(url.absoluteString)"
+        let tagsJoined = tags.map(\.rawValue).joined(separator: ", ")
+        let tagText = tagsJoined.isEmpty ? "" : " [tags: \(tagsJoined)]"
+        return "[#\(id)] \(title) -> \(url.absoluteString)\(tagText)"
     }
-}
 
-public protocol DailyTask: LeetCodeTask {
-    var date: DateComponents { get }
-}
-
-public extension DailyTask {
-    var category: ProblemCategory { .daily(date: date) }
-}
-
-public protocol TopicTask: LeetCodeTask {
-    var topicName: String { get }
-}
-
-public extension TopicTask {
-    var category: ProblemCategory { .topic(name: topicName) }
+    func run() {}
 }
 
 @MainActor
@@ -53,15 +50,18 @@ public final class TaskRegistry {
         queue.sync { storage }
     }
 
-    public func tasks(in category: ProblemCategory) -> [any LeetCodeTask] {
+    public func tasks(withTag tag: ProblemTag) -> [any LeetCodeTask] {
         queue.sync {
-            storage.filter { $0.category == category }
+            storage.filter { task in
+                task.tags.contains { $0.rawValue.caseInsensitiveCompare(tag.rawValue) == .orderedSame }
+            }
         }
     }
 }
 
+@MainActor
 public enum TaskCatalog {
     public static func bootstrap() -> [any LeetCodeTask] {
-        [SampleDailyTask(), SampleTopicTask()]
+        ProblemCatalog.all
     }
 }

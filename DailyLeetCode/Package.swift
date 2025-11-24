@@ -16,6 +16,10 @@ let package = Package(
         .executable(
             name: "DailyLeetCodeRunner",
             targets: ["DailyLeetCodeRunner"]
+        ),
+        .executable(
+            name: "ProblemScaffolder",
+            targets: ["ProblemScaffolder"]
         )
     ],
     dependencies: [
@@ -30,6 +34,10 @@ let package = Package(
         ),
         .executableTarget(
             name: "DailyLeetCodeRunner",
+            dependencies: ["DailyLeetCodeCore", "LeetCodeAPI"]
+        ),
+        .executableTarget(
+            name: "ProblemScaffolder",
             dependencies: ["DailyLeetCodeCore", "LeetCodeAPI"]
         ),
         .testTarget(
