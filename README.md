@@ -16,7 +16,7 @@ _中文版请见 [README-CN.md](README-CN.md)_
 ## Problem Files
 - New problems live under `DailyLeetCode/Sources/DailyLeetCodeCore/Problems/`.
 - Name files `LTXXXX_Title.swift` (e.g., `LT0088_MergeSortedArray.swift`) so they sort naturally by LeetCode ID.
-- Conform to `LeetCodeTask`, provide whatever tags you need (e.g., `["daily", "two-pointers"]`), and keep `ProblemCatalog.all` updated. The generator described below automates both steps.
+- Conform to `LeetCodeTask`, provide whatever tags you need (e.g., `[.daily, .topic("dp"), .custom("array")]` or string-literals such as `["daily", "topic:greedy"]`), and keep `ProblemCatalog.all` updated. The generator described below automates both steps.
 
 ## Cookie/Token Setup
 1. Log into LeetCode in the browser and copy the full cookie string (must contain `csrftoken` and `LEETCODE_SESSION`).
@@ -51,4 +51,4 @@ cd DailyLeetCode
 swift run ProblemScaffolder --url=https://leetcode.cn/problems/merge-sorted-array/ --tags=daily,array
 ```
 
-This fetches Chinese metadata, writes `LTXXXX_Title.swift` with doc comments + boilerplate, and appends the new type to `ProblemCatalog`. Use `--force` to overwrite an existing file or `--env=/custom/.leetcode.env` to point at a different credential file.
+This fetches Chinese metadata, writes `LTXXXX_Title.swift` with doc comments + boilerplate, and appends the new type to `ProblemCatalog`. Tags understand prefixes such as `topic:dp`, `company:bytedance`, `difficulty:hard`; unknown tags fall back to `.custom("...")`. Use `--force` to overwrite an existing file or `--env=/custom/.leetcode.env` to point at a different credential file.

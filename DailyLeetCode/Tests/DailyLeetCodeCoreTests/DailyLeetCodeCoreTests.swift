@@ -7,5 +7,5 @@ func sampleProblemMetadata() {
     let task = SampleProblem()
     #expect(task.id == "000000")
     #expect(task.describe().contains("样例占位题"))
-    #expect(task.tags.contains("demo"))
+    #expect(task.tags.contains(.custom("demo")))
 }

@@ -15,7 +15,7 @@
 ## 题文件结构
 - 所有新题统一放在 `DailyLeetCode/Sources/DailyLeetCodeCore/Problems/`。
 - 文件命名建议 `LTXXXX_ProblemName.swift`（如 `LT0088_MergeSortedArray.swift`），以 LeetCode 题号排序。
-- 文件内部实现 `LeetCodeTask`，填写 `tags`（如 `["daily", "two-pointers"]`），并在 `ProblemCatalog.all` 列表中追加。下文的生成器会自动完成这些步骤。
+- 文件内部实现 `LeetCodeTask`，填写 `tags`（可写成 `[.daily, .topic("dp")]` 或字符串形式 `["daily", "topic:greedy"]`），并在 `ProblemCatalog.all` 列表中追加。下文的生成器会自动完成这些步骤。
 
 ## Token 配置
 1. 浏览器登录 LeetCode，从开发者工具复制整段 Cookie（包含 `csrftoken` 与 `LEETCODE_SESSION`）。
@@ -49,4 +49,4 @@ cd DailyLeetCode
 swift run ProblemScaffolder --url=https://leetcode.cn/problems/merge-sorted-array/ --tags=daily,array
 ```
 
-命令会读取 `.leetcode.env`，抓取中文题面，生成 `LTXXXX_Title.swift` 文件（含 Doc 注释和占位代码），并自动在 `ProblemCatalog` 中注册。若目标文件已存在可加 `--force` 覆盖，若凭证文件不在默认位置可用 `--env=<path>` 指定。
+命令会读取 `.leetcode.env`，抓取中文题面，生成 `LTXXXX_Title.swift` 文件（含 Doc 注释和占位代码），并自动在 `ProblemCatalog` 中注册。`--tags` 支持 `daily`、以及 `topic:dp`、`company:bytedance`、`difficulty:hard` 等带前缀写法，其他值会落到 `.custom("...")`。若目标文件已存在可加 `--force` 覆盖，若凭证文件不在默认位置可用 `--env=<path>` 指定。

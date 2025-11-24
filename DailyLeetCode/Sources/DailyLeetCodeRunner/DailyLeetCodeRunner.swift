@@ -49,12 +49,10 @@ struct DailyLeetCodeRunner {
     }
 
     private static func run(tagFilter: String) {
-        let lower = tagFilter.lowercased()
+        let targetTag = ProblemTag(tagFilter)
         let matches = TaskRegistry.shared
             .allTasks()
-            .filter { task in
-                task.tags.contains { $0.rawValue.lowercased() == lower }
-            }
+            .filter { $0.tags.contains(targetTag) }
         guard !matches.isEmpty else { return }
         matches.forEach(runTask)
     }

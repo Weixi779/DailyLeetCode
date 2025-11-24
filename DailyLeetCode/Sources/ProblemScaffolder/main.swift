@@ -134,8 +134,32 @@ struct ProblemScaffolder {
 
     private static func tagLiteral(from tags: [String]) -> String {
         guard tags.isEmpty == false else { return "[]" }
-        let values = tags.map { "\"\(escape($0))\"" }.joined(separator: ", ")
+        let values = tags.map { literal(forTag: $0) }.joined(separator: ", ")
         return "[\(values)]"
+    }
+
+    private static func literal(forTag raw: String) -> String {
+        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lower = trimmed.lowercased()
+        switch lower {
+        case "daily": return ".daily"
+        case "weekly": return ".weekly"
+        case "contest": return ".contest"
+        default:
+            break
+        }
+        let parts = trimmed.split(separator: ":", maxSplits: 1).map(String.init)
+        if parts.count == 2 {
+            let prefix = parts[0].lowercased()
+            let value = escape(parts[1])
+            switch prefix {
+            case "topic": return ".topic(\"\(value)\")"
+            case "company": return ".company(\"\(value)\")"
+            case "difficulty": return ".difficulty(\"\(value)\")"
+            default: break
+            }
+        }
+        return ".custom(\"\(escape(trimmed))\")"
     }
 
     private static func updateProblemCatalog(with typeName: String, basePath: String) throws {

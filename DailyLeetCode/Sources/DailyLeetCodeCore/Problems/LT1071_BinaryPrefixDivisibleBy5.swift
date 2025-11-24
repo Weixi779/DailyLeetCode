@@ -41,7 +41,7 @@ public struct LT1071BinaryPrefixDivisibleBy5: LeetCodeTask {
     public let id = "1071"
     public let title = "可被 5 整除的二进制前缀"
     public let url = URL(string: "https://leetcode.cn/problems/binary-prefix-divisible-by-5/")!
-    public let tags: [ProblemTag] = []
+    public let tags: [ProblemTag] = [.topic("Binary")]
 
     public init() {}
     
