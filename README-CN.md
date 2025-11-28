@@ -37,6 +37,8 @@ swift run DailyLeetCodeRunner --fetch-url=https://leetcode.cn/problems/two-sum/
 
 命令会输出题号、中文标题、难度、链接与中文描述（若无翻译则回退英文），方便复制到 Swift 文档注释。
 
+快捷方式：在仓库根目录使用 `scripts/dl ...`，无需每次输入 `swift run DailyLeetCodeRunner ...`。
+
 ## Xcode 中按 `⌘R`
 - 打开 `DailyLeetCode.xcworkspace`，选择 `DailyLeetCodeRunner`（或自建一个引用 `DailyLeetCodeCore` 的 Command Line Tool）。
 - 每个题的 `run()` 默认是空实现，按需覆写并加入样例调用。
@@ -50,3 +52,9 @@ swift run ProblemScaffolder --url=https://leetcode.cn/problems/merge-sorted-arra
 ```
 
 命令会读取 `.leetcode.env`，抓取中文题面，生成 `LTXXXX_Title.swift` 文件（含 Doc 注释和占位代码），并自动在 `ProblemCatalog` 中注册。`--tags` 支持 `daily`、以及 `topic:dp`、`company:bytedance`、`difficulty:hard` 等带前缀写法，其他值会落到 `.custom("...")`。若目标文件已存在可加 `--force` 覆盖，若凭证文件不在默认位置可用 `--env=<path>` 指定。
+
+## 可选后续
+- 用 `git rm -r --cached LeetCodeAPI/.build DailyLeetCode/.build` 清理已跟踪的编译产物，让 `.gitignore` 规则生效。
+- 如果文件过多，可在生成器里实现按题号区间自动建子目录（如 `LT0001-LT0100`），便于 Xcode/ Finder 管理。
+- 可在模板里预留测试样例注释/断言区域，便于粘贴 LeetCode 示例自测。
+- Xcode 可以再建一个只注册当前 WIP 题目的轻量 Runner Scheme，让 `⌘R` 仅运行单题。

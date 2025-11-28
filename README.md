@@ -38,6 +38,8 @@ swift run DailyLeetCodeRunner --fetch-url=https://leetcode.cn/problems/two-sum/
 
 The runner prints the problem ID, localized difficulty, link, and Chinese description so you can paste it directly into Swift doc comments.
 
+Shortcut: use `scripts/dl ...` from repo root instead of typing `swift run DailyLeetCodeRunner ...`.
+
 ## Running in Xcode (`⌘R`)
 - Open `DailyLeetCode.xcworkspace`, pick the `DailyLeetCodeRunner` scheme (or create a scratch Command Line Tool that imports `DailyLeetCodeCore`).
 - Implement `run()` inside each problem struct however you like (the protocol provides an empty default), e.g. calling the solution with sample inputs.
@@ -52,3 +54,9 @@ swift run ProblemScaffolder --url=https://leetcode.cn/problems/merge-sorted-arra
 ```
 
 This fetches Chinese metadata, writes `LTXXXX_Title.swift` with doc comments + boilerplate, and appends the new type to `ProblemCatalog`. Tags understand prefixes such as `topic:dp`, `company:bytedance`, `difficulty:hard`; unknown tags fall back to `.custom("...")`. Use `--force` to overwrite an existing file or `--env=/custom/.leetcode.env` to point at a different credential file.
+
+## Optional Next Steps
+- Clean tracked build artifacts with `git rm -r --cached LeetCodeAPI/.build DailyLeetCode/.build` so the `.gitignore` rules take effect.
+- When files grow large, extend the generator to bucket directories by ID range (e.g., `LT0001-LT0100`) to keep Finder/Xcode tidy.
+- Add a test stub or sample assertion section in the generator template if you want ready-made places to paste LeetCode samples.
+- Create an extra lightweight Runner scheme in Xcode that only registers the current WIP problem, so `⌘R` runs a single task.

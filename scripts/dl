@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Shortcut for swift run DailyLeetCodeRunner with args passthrough
+cd "$(dirname "$0")/.."
+exec swift run DailyLeetCodeRunner "$@"
