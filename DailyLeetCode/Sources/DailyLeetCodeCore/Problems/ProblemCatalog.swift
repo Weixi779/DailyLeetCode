@@ -8,6 +8,7 @@ public enum ProblemCatalog {
         LT1694MakeSumDivisibleByP(),
         LT0303RangeSumQueryImmutable(),
         LT0088MergeSortedArray(),
+        LT0027RemoveElement(),
 
     ]
 }
