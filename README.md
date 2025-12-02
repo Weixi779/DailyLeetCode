@@ -38,7 +38,10 @@ swift run DailyLeetCodeRunner --fetch-url=https://leetcode.cn/problems/two-sum/
 
 The runner prints the problem ID, localized difficulty, link, and Chinese description so you can paste it directly into Swift doc comments.
 
-Shortcut: use `scripts/dl ...` from repo root instead of typing `swift run DailyLeetCodeRunner ...`.
+Shortcuts (repo root):
+- `scripts/dl.sh runner [args]` → `swift run DailyLeetCodeRunner ...`
+- `scripts/dl.sh scaffold [args]` → `swift run ProblemScaffolder ...`
+- Omit subcommand to default to runner passthrough.
 
 ## Running in Xcode (`⌘R`)
 - Open `DailyLeetCode.xcworkspace`, pick the `DailyLeetCodeRunner` scheme (or create a scratch Command Line Tool that imports `DailyLeetCodeCore`).

@@ -37,7 +37,10 @@ swift run DailyLeetCodeRunner --fetch-url=https://leetcode.cn/problems/two-sum/
 
 命令会输出题号、中文标题、难度、链接与中文描述（若无翻译则回退英文），方便复制到 Swift 文档注释。
 
-快捷方式：在仓库根目录使用 `scripts/dl ...`，无需每次输入 `swift run DailyLeetCodeRunner ...`。
+快捷方式（仓库根）：
+- `scripts/dl.sh runner [args]` → `swift run DailyLeetCodeRunner ...`
+- `scripts/dl.sh scaffold [args]` → `swift run ProblemScaffolder ...`
+- 无子命令时默认等价于 runner。
 
 ## Xcode 中按 `⌘R`
 - 打开 `DailyLeetCode.xcworkspace`，选择 `DailyLeetCodeRunner`（或自建一个引用 `DailyLeetCodeCore` 的 Command Line Tool）。
