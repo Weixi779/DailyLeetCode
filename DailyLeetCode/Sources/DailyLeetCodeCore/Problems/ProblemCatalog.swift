@@ -9,6 +9,8 @@ public enum ProblemCatalog {
         LT0303RangeSumQueryImmutable(),
         LT0088MergeSortedArray(),
         LT0027RemoveElement(),
+        LT0026RemoveDuplicatesFromSortedArray(),
+        LT0080RemoveDuplicatesFromSortedArrayIi(),
 
     ]
 }

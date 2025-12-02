@@ -88,4 +88,18 @@ public struct LT0027RemoveElement: LeetCodeTask {
         
         return result
     }
+    
+    /// - 快慢指针写法
+    func removeElementII(_ nums: inout [Int], _ val: Int) -> Int {
+        var slow = 0
+
+        for fast in 0..<nums.count {
+            if nums[fast] != val {
+                nums[slow] = nums[fast]
+                slow += 1
+            }
+        }
+
+        return slow
+    }
 }
