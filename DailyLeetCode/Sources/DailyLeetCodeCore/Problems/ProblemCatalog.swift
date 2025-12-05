@@ -11,6 +11,7 @@ public enum ProblemCatalog {
         LT0027RemoveElement(),
         LT0026RemoveDuplicatesFromSortedArray(),
         LT0080RemoveDuplicatesFromSortedArrayIi(),
+        LT0169MajorityElement(),
 
     ]
 }
