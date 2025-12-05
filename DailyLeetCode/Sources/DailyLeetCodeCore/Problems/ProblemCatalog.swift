@@ -12,6 +12,7 @@ public enum ProblemCatalog {
         LT0026RemoveDuplicatesFromSortedArray(),
         LT0080RemoveDuplicatesFromSortedArrayIi(),
         LT0169MajorityElement(),
+        LT3704CountPartitionsWithEvenSumDifference(),
 
     ]
 }

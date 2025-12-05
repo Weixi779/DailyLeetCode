@@ -41,10 +41,6 @@ public struct LT0169MajorityElement: LeetCodeTask {
     public let tags: [ProblemTag] = []
 
     public init() {}
-    
-    public func run() {
-        majorityElement([2,2,1,1,1,2,2])
-    }
 
     func majorityElement(_ nums: [Int]) -> Int {
         var hashMap: [Int: Int] = [:]
