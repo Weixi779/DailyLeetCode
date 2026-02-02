@@ -13,6 +13,11 @@ public enum ProblemCatalog {
         LT0080RemoveDuplicatesFromSortedArrayIi(),
         LT0169MajorityElement(),
         LT3704CountPartitionsWithEvenSumDifference(),
+        LT1630CountOddNumbersInAnIntervalRange(),
+        LT0189RotateArray(),
+        LT0121BestTimeToBuyAndSellStock(),
+        LT0122BestTimeToBuyAndSellStockIi(),
+        LT0055JumpGame(),
 
     ]
 }
