@@ -18,6 +18,9 @@ public enum ProblemCatalog {
         LT0121BestTimeToBuyAndSellStock(),
         LT0122BestTimeToBuyAndSellStockIi(),
         LT0055JumpGame(),
+        LT0045JumpGameIi(),
+        LT0274HIndex(),
+        LT0380InsertDeleteGetrandomO1(),
 
     ]
 }
