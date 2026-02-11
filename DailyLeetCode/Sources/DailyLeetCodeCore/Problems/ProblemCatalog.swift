@@ -21,6 +21,8 @@ public enum ProblemCatalog {
         LT0045JumpGameIi(),
         LT0274HIndex(),
         LT0380InsertDeleteGetrandomO1(),
+        LT0238ProductOfArrayExceptSelf(),
+        LT0134GasStation(),
 
     ]
 }
