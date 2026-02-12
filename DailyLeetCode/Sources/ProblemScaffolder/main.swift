@@ -12,18 +12,30 @@ struct GeneratorArguments {
 @main
 struct ProblemScaffolder {
     static func main() async {
+        let code = await runAndExitCode()
+        exit(code.rawValue)
+    }
+
+    private static func runAndExitCode() async -> ExitCode {
         do {
             try await run()
+            return .success
+        } catch GeneratorError.helpRequested {
+            printUsage()
+            return .success
+        } catch let error as GeneratorError {
+            fputs("参数错误: \(error)\n", stderr)
+            printUsage()
+            return .usage
         } catch {
-            fputs("Error: \(error)\n", stderr)
-            exit(1)
+            fputs("运行失败: \(error)\n", stderr)
+            return .failure
         }
     }
 
     private static func run() async throws {
-        let arguments = parseArguments()
+        let arguments = try parseArguments()
         guard let problemURL = arguments.url else {
-            printUsage()
             throw GeneratorError.missingURL
         }
 
@@ -72,9 +84,22 @@ struct ProblemScaffolder {
         print("Generated \(fileName)")
     }
 
-    private static func parseArguments() -> GeneratorArguments {
+    private static func parseArguments() throws -> GeneratorArguments {
         var args = GeneratorArguments()
-        var iterator = CommandLine.arguments.dropFirst().makeIterator()
+        var input = Array(CommandLine.arguments.dropFirst())
+        guard let first = input.first else {
+            throw GeneratorError.helpRequested
+        }
+        switch first {
+        case "scaffold", "s":
+            input.removeFirst()
+        case "help", "h", "--help", "-h":
+            throw GeneratorError.helpRequested
+        default:
+            throw GeneratorError.unknownArgument(first)
+        }
+
+        var iterator = input.makeIterator()
         while let arg = iterator.next() {
             if arg.hasPrefix("--url=") {
                 let value = String(arg.dropFirst(6))
@@ -92,6 +117,10 @@ struct ProblemScaffolder {
                 args.envPath = String(arg.dropFirst(6))
             } else if arg == "--env", let value = iterator.next() {
                 args.envPath = value
+            } else if arg == "--help" || arg == "-h" {
+                throw GeneratorError.helpRequested
+            } else {
+                throw GeneratorError.unknownArgument(arg)
             }
         }
         return args
@@ -184,7 +213,7 @@ struct ProblemScaffolder {
     }
 
     private static func printUsage() {
-        print("Usage: swift run ProblemScaffolder --url=https://leetcode.cn/problems/<slug>/ [--tags=tag1,tag2] [--force]")
+        print("Usage: swift run ProblemScaffolder scaffold --url=https://leetcode.cn/problems/<slug>/ [--tags=tag1,tag2] [--force] [--env=<path>]")
     }
 }
 
@@ -192,6 +221,8 @@ enum GeneratorError: Error, CustomStringConvertible {
     case missingURL
     case fileAlreadyExists(String)
     case catalogFormatInvalid
+    case unknownArgument(String)
+    case helpRequested
 
     var description: String {
         switch self {
@@ -201,6 +232,16 @@ enum GeneratorError: Error, CustomStringConvertible {
             return "File already exists at \(path). Pass --force to overwrite."
         case .catalogFormatInvalid:
             return "ProblemCatalog.swift structure not recognized"
+        case .unknownArgument(let value):
+            return "Unknown argument: \(value)"
+        case .helpRequested:
+            return "help requested"
         }
     }
+}
+
+private enum ExitCode: Int32 {
+    case success = 0
+    case failure = 1
+    case usage = 64
 }
