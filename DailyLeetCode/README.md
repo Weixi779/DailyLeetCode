@@ -2,6 +2,21 @@
 
 Swift Package 工作区，核心代码在 `Sources/DailyLeetCodeCore`，命令行入口为 `DailyLeetCodeRunner`，生成器为 `ProblemScaffolder`。
 
+## 目录结构
+```text
+Sources/
+├── DailyLeetCodeCore/
+│   ├── Tasking/      # LeetCodeTask / ProblemTag / TaskRegistry / TaskCatalog
+│   ├── Runner/       # Runner CLI 解析与执行逻辑
+│   ├── Scaffolding/  # 题目模板生成、catalog 写入、scaffolder 参数解析
+│   ├── Metadata/     # 远端题面元数据抓取
+│   └── Problems/     # 题解文件与 ProblemCatalog
+├── DailyLeetCodeRunner/
+│   └── DailyLeetCodeRunner.swift   # 薄入口（仅装配+退出码）
+└── ProblemScaffolder/
+    └── main.swift                  # 薄入口（仅解析+调用生成器）
+```
+
 ## 运行
 ```bash
 swift run DailyLeetCodeRunner run                # 默认只运行 isEnabled=true 的题
