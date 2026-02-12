@@ -23,6 +23,9 @@ public enum ProblemCatalog {
         LT0380InsertDeleteGetrandomO1(),
         LT0238ProductOfArrayExceptSelf(),
         LT0134GasStation(),
+        LT0135Candy(),
+        LT0042TrappingRainWater(),
+        LT0013RomanToInteger(),
 
     ]
 }
