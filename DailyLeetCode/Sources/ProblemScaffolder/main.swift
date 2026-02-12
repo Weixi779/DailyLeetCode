@@ -49,6 +49,7 @@ struct ProblemScaffolder {
             public let title = \"\(escape(displayTitle))\"
             public let url = URL(string: \"https://leetcode.cn/problems/\(details.slug)/\")!
             public let tags: [ProblemTag] = \(tagsLiteral)
+            public let isEnabled = false
         
             public init() {}
         
