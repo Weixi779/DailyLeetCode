@@ -26,6 +26,12 @@ public enum ProblemCatalog {
         LT0135Candy(),
         LT0042TrappingRainWater(),
         LT0013RomanToInteger(),
+        LT0012IntegerToRoman(),
+        LT0058LengthOfLastWord(),
+        LT0014LongestCommonPrefix(),
+        LT0151ReverseWordsInAString(),
+        LT0006ZigzagConversion(),
+        LT0028FindTheIndexOfTheFirstOccurrenceInAString(),
 
     ]
 }
