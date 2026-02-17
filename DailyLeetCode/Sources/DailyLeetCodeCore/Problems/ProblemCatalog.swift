@@ -32,6 +32,12 @@ public enum ProblemCatalog {
         LT0151ReverseWordsInAString(),
         LT0006ZigzagConversion(),
         LT0028FindTheIndexOfTheFirstOccurrenceInAString(),
+        LT0125ValidPalindrome(),
+        LT0392IsSubsequence(),
+        LT0167TwoSumIiInputArrayIsSorted(),
+        LT0011ContainerWithMostWater(),
+        LT00153Sum(),
+        LT0383RansomNote(),
 
     ]
 }
