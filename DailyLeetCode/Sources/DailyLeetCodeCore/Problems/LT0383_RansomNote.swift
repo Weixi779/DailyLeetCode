@@ -50,5 +50,17 @@ public struct LT0383RansomNote: LeetCodeTask {
 
     public init() {}
 
-    // TODO: 编写题解代码与本地调试入口
+    func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
+        var map: [Character: Int] = .init()
+        for char in magazine {
+            map[char, default: 0] += 1
+        }
+        
+        for char in ransomNote {
+            guard let value = map[char], value > 0 else { return false }
+            map[char] = value - 1
+        }
+        
+        return true
+    }
 }

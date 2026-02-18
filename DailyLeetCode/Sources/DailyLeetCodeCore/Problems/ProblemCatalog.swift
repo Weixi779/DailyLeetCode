@@ -38,6 +38,14 @@ public enum ProblemCatalog {
         LT0011ContainerWithMostWater(),
         LT00153Sum(),
         LT0383RansomNote(),
+        LT0205IsomorphicStrings(),
+        LT0290WordPattern(),
+        LT0242ValidAnagram(),
+        LT0049GroupAnagrams(),
+        LT0001TwoSum(),
+        LT0202HappyNumber(),
+        LT0219ContainsDuplicateIi(),
+        LT0128LongestConsecutiveSequence(),
 
     ]
 }
