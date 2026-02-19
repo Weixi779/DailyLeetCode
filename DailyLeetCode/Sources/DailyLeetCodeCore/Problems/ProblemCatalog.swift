@@ -46,6 +46,9 @@ public enum ProblemCatalog {
         LT0202HappyNumber(),
         LT0219ContainsDuplicateIi(),
         LT0128LongestConsecutiveSequence(),
+        LT0209MinimumSizeSubarraySum(),
+        LT0003LongestSubstringWithoutRepeatingCharacters(),
+        LT0076MinimumWindowSubstring(),
 
     ]
 }

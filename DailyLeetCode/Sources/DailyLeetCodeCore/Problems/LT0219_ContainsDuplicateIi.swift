@@ -43,7 +43,7 @@ public struct LT0219ContainsDuplicateIi: LeetCodeTask {
     public let title = "存在重复元素 II"
     public let url = URL(string: "https://leetcode.cn/problems/contains-duplicate-ii/")!
     public let tags: [ProblemTag] = []
-    public let isEnabled = true
+    public let isEnabled = false
 
     public init() {}
     
