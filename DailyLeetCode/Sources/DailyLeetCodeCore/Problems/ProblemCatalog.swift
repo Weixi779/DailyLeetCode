@@ -49,6 +49,7 @@ public enum ProblemCatalog {
         LT0209MinimumSizeSubarraySum(),
         LT0003LongestSubstringWithoutRepeatingCharacters(),
         LT0076MinimumWindowSubstring(),
+        LT0036ValidSudoku(),
 
     ]
 }

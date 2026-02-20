@@ -60,37 +60,47 @@ public struct LT0076MinimumWindowSubstring: LeetCodeTask {
         print(minWindow("a", "a"))
         print(minWindow("a", "aa"))
     }
-    
-    private func isSameWord(_ targetMap: [Character: Int], _ charMap: [Character: Int]) -> Bool {
-        for (key, value) in targetMap {
-            if (charMap[key] ?? 0) < value { return false }
-        }
-        
-        return true
-    }
 
     func minWindow(_ s: String, _ t: String) -> String {
         let strs = [Character](s)
         var targetMap = [Character: Int]()
-        var result: [Character]? = nil
-        var chars = [Character]()
         var charMap = [Character: Int]()
         
         for char in [Character](t) {
             targetMap[char, default: 0] += 1
         }
         
-        for str in strs {
-            chars.append(str)
+        let targetKinds = targetMap.count
+        var validCount = 0
+        
+        var left = 0
+        var bestLeft = 0
+        var bestCount = Int.max
+        
+        for right in strs.indices {
+            let str = strs[right]
             charMap[str, default: 0] += 1
             
-            while isSameWord(targetMap, charMap) {
-                result = (result?.count ?? Int.max) <= chars.count ? result : chars
-                let removeChar = chars.removeFirst()
+            if let need = targetMap[str], charMap[str] == need {
+                validCount += 1
+            }
+            
+            while validCount == targetKinds {
+                let count = right - left + 1
+                if count < bestCount {
+                    bestCount = count
+                    bestLeft = left
+                }
+                let removeChar = strs[left]
+                if let need = targetMap[removeChar], charMap[removeChar] == need {
+                    validCount -= 1
+                }
                 charMap[removeChar, default: 0] -= 1
+                left += 1
             }
         }
         
-        return String(chars)
+        if bestCount == Int.max { return "" }
+        return String(strs[bestLeft..<bestLeft+bestCount])
     }
 }
